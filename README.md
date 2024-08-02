@@ -15,7 +15,7 @@ This project implements a character-level language model from scratch, inspired 
 
 - Python 3.7+
 - NumPy
-- 
+
 ## Acknowledgements
 
 This project is based on Andrej Karpathy's "makemore" series of neural network videos.
