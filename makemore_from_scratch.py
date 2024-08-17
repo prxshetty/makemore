@@ -74,7 +74,19 @@ p=torch.rand(3, generator=g)
 p=p/p.sum()
 p
 
+p.shape
+
 torch.multinomial(p, num_samples=20, replacement=True, generator=g)
+
+P.shape
+
+P.sum(1, keepdim = True).shape
+
+# 27 27
+# 27, 1 BROADCASTABLE
+
+P = N.float()
+P = P / P.sum(1, keepdim = True)
 
 g=torch.Generator().manual_seed(2147483647)
 
@@ -82,8 +94,10 @@ for i in range(10):
   ix=0
   out=[]
   while True:
-    p=N[ix].float()
-    p=p/p.sum()
+    # p=N[ix].float()
+    # p=p/p.sum()
+    p = P[ix]
+    p = torch.ones(27) / 27.0
     ix=torch.multinomial(p, num_samples=1, replacement=True, generator=g).item()
     out.append(itos[ix])
     # print(itos[ix])
